@@ -1,0 +1,258 @@
+:root{
+    --percentage:0%;
+}
+
+
+
+body{
+    font-family: '黑体';
+    width:100vw;
+    overflow-x: hidden;
+    
+    background-color: #323233;
+    scroll-behavior:smooth;
+    color: #F2F2F7;
+	text-align: center;
+}
+
+.warpper{opacity: 1;
+    width: 100vw;
+    height: 100%;
+    
+}
+
+
+
+svg {
+    display: block;
+    position:fixed;
+    z-index: 3;
+}
+.headbox{
+    
+    height: 100vh;
+
+}
+
+.backback1{
+    z-index: -100;
+    position:absolute;
+    top:0;
+    left:0;
+    min-height: 100vh;
+    width:100vw;
+    background-color:#323233;
+    background-image:radial-gradient(closest-side,rgba(17, 35, 47, 1),rgba(0,0,0,0)) ;
+    background-position:
+    1vmax 1vmax;
+    animation:5s movement linear infinite;
+}
+
+@keyframes movement {
+    0%, 100%{
+        background-position:
+    5vmax 5vmax;
+    }
+}
+
+
+.backback{
+    z-index: -100;
+    position:absolute;
+    top:0;
+    left:0;
+    min-height:100vh;
+    width:100vw;
+    background-color: #323233;
+    background-image:radial-gradient(closest-side,rgba(41, 56, 78, 1),rgba(235,105,78,0))
+    ,radial-gradient(closest-side,rgba(34, 47, 71, 1),rgba(243,11,164,0)),
+    radial-gradient(closest-side,rgba(31, 54, 103, 1),rgba(254,234,131,0)),
+    radial-gradient(closest-side,rgba(86, 64, 143, 1),rgba(170,142,245,0)),
+    radial-gradient(closest-side,rgba(146, 117, 92, 1),rgba(248,192,147,0));
+    background-size:
+    130vmax 130vmax,
+    80vmax 80vmax,
+    90vmax 90vmax,
+    110vmax 110vmax,
+    90vmax 90vmax;
+    background-position:
+    -80vmax -80vmax,
+    60vmax -30vmax,
+    10vmax 10vmax,
+    -30vmax -10vmax,
+    50vmax 50vmax;
+    background-repeat: no-repeat;
+    animation:10s movement linear infinite;
+}
+
+.backback::after{
+    content:'';
+    display: block;
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+@keyframes movement {
+    0%, 100%{
+        background-size:
+    130vmax 130vmax,
+    80vmax 80vmax,
+    90vmax 90vmax,
+    110vmax 110vmax,
+    90vmax 90vmax;
+    background-position:
+    -80vmax -80vmax,
+    60vmax -30vmax,
+    10vmax 10vmax,
+    -30vmax -10vmax,
+    50vmax 50vmax;
+    }
+    25%{
+        background-size:
+    100vmax 100vmax,
+    90vmax 90vmax,
+    100vmax 100vmax,
+    90vmax 90vmax,
+    60vmax 60vmax;
+    background-position:
+    -60vmax -90vmax,
+    50vmax -40vmax,
+    0vmax -20vmax,
+    -40vmax -20vmax,
+    40vmax 60vmax;
+    }
+    50%{
+        background-size:
+    80vmax 80vmax,
+    110vmax 110vmax,
+    80vmax 80vmax,
+    60vmax 60vmax,
+    80vmax 80vmax;
+    background-position:
+    -50vmax -70vmax,
+    40vmax -30vmax,
+    10vmax 0vmax,
+    20vmax 10vmax,
+    30vmax 70vmax;
+    }
+    75%{
+        background-size:
+    90vmax 90vmax,
+    90vmax 90vmax,
+    100vmax 100vmax,
+    90vmax 90vmax,
+    70vmax 70vmax;
+    background-position:
+    -50vmax -40vmax,
+    50vmax -30vmax,
+    20vmax 0vmax,
+    -10vmax 10vmax,
+    40vmax 60vmax;
+    }
+}
+
+.mask{
+    height: 100vh;
+    width:100vh;
+
+    position:absolute;
+    
+    
+    z-index: -1;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.mask-1{
+    box-shadow: 0 0 50px 60px #3f748f; 
+}
+
+.mask-2{
+    box-shadow: 0 0 30px 50px #3f748f; 
+}
+
+.mask-3{
+    box-shadow: 0 0 100px 150px #3f748f; 
+}
+
+.headbox:hover ~ .mask-1{
+    animation-name:mask-one;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.headbox:hover ~ .mask-2{
+    animation-name:mask-one;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.headbox:hover ~ .mask-3{
+    animation-name:mask-one;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes mask-one {
+    from{
+        transform: scale(0);
+        opacity: 1;
+
+    }
+    to{
+        transform: scale(2);
+        opacity: 0;
+    }
+    
+}
+
+
+
+#box{
+
+    position:sticky;
+    top:32vh;
+    height: 400px;
+    
+    display: flex;
+    
+}
+#h0101{padding-left: 20px;
+    text-align: left;
+    font-family: '黑体';
+    font-size:70px;
+    color:#b7b7b7;
+    letter-spacing:-0.3px;
+    background-image:linear-gradient(75deg,
+    rgba(214, 214, 214, 1)0%,rgba(214, 214, 214, 1) 33.33%,
+    rgba(255,255,255,0) 66.67%,rgba(255,255,255,0) 100%);
+    background-size: 300% 100%;
+    background-position-x:100%;
+    
+    background-clip:text;
+    -webkit-background-clip: text;
+    color:transparent;
+    animation:fadein 2s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadein {
+    0%{
+        background-position-x:100%;
+    }
+    100%{
+        background-position-x:0%;
+    }
+}
+
+.container{
+    text-align: center;
+    height: auto;
+    font-family: '黑体';
+    color:#fff;
+}

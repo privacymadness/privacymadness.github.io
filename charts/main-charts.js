@@ -84,42 +84,42 @@ let data_2_1 = [
     {
         name: '公众网民对个人信息保护的整体评价',
         data: [
-            { value: 10.02, name: '非常好'  ,itemStyle:{color:'#18fff8'}},
-            { value: 27.5, name: '比较好' ,itemStyle:{color:'#FFD300'}},
-            { value: 35.86, name: '一般' ,itemStyle:{color:'#949494'} },
-            { value: 17.64, name: '不太好' ,itemStyle:{color:'#f1f1f1'}},
-            { value: 8.98, name: '非常不好' }
+            { value: 10.02, name: '非常好'  ,itemStyle:{color:'#00ad9d'}},
+            { value: 27.5, name: '比较好' ,itemStyle:{color:'#62D9AD'}},
+            { value: 35.86, name: '一般' ,itemStyle:{color:'#FEB64D'} },
+            { value: 17.64, name: '不太好' ,itemStyle:{color:'#FFDC4C'}},
+            { value: 8.98, name: '非常不好' ,itemStyle:{color:'#FFE88E'} }
         ]
     },
     {
         name: '公众网民对个人信息泄露的感受现状',
         data: [
-            { value: 13.93, name: '非常多'  ,itemStyle:{color:'#18fff8'}},
-            { value: 27.32, name: '比较多'  ,itemStyle:{color:'#FFD300'}},
-            { value: 35.66, name: '有一些' ,itemStyle:{color:'#949494'} },
-            { value: 13.82, name: '很少' ,itemStyle:{color:'#f1f1f1'}},
-            { value: 9.26, name: '没有遇到'  }
+            { value: 13.93, name: '非常多'  ,itemStyle:{color:'#00ad9d'}},
+            { value: 27.32, name: '比较多'  ,itemStyle:{color:'#62D9AD'}},
+            { value: 35.66, name: '有一些' ,itemStyle:{color:'#FEB64D'} },
+            { value: 13.82, name: '很少' ,itemStyle:{color:'#FFDC4C'}},
+            { value: 9.26, name: '没有遇到' ,itemStyle:{color:'#FFE88E'} }
         ]
     },
     {
         name: '网民对生物识别信息的利用情况感受',
         data: [
-            { value: 21.34, name: '非常担心' ,itemStyle:{color:'#18fff8'} },
-            { value: 36.62, name: '比较担心'  ,itemStyle:{color:'#FFD300'}},
-            { value: 25.1, name: '一般' ,itemStyle:{color:'#949494'}},
-            { value: 11.99, name: '很少担心' ,itemStyle:{color:'#f1f1f1'}},
-            { value: 4.95, name: '没有担心' ,itemStyle:{color:'#18fff8'}}
+            { value: 21.34, name: '非常担心' ,itemStyle:{color:'#00ad9d'} },
+            { value: 36.62, name: '比较担心'  ,itemStyle:{color:'#62D9AD'}},
+            { value: 25.1, name: '一般' ,itemStyle:{color:'#FEB64D'}},
+            { value: 11.99, name: '很少担心' ,itemStyle:{color:'#FFDC4C'}},
+            { value: 4.95, name: '没有担心' ,itemStyle:{color:'#FFE88E'}}
         ]
     },
     {
         name: '网民认为精准广告推送是否征得同意',
         data: [
-            { value: 3.26, name: '全部都征得同意' ,itemStyle:{color:'#18fff8'}},
-            { value: 6.96, name: '大部分征得同意' ,itemStyle:{color:'#FFD300'}},
-            { value: 6.94, name: '大约一般征得同意',itemStyle:{color:'#949494'} },
-            { value: 22.22, name: '小部分征得同意' ,itemStyle:{color:'#f1f1f1'}},
-            { value: 40.84, name: '全部没有征得同意' },
-            { value: 19.79, name: '不清楚' }
+            { value: 3.26, name: '全部都征得同意' ,itemStyle:{color:'#177d74'}},
+            { value: 6.96, name: '大部分征得同意' ,itemStyle:{color:'#00ad9d'}},
+            { value: 6.94, name: '大约一般征得同意',itemStyle:{color:'#62D9AD'} },
+            { value: 22.22, name: '小部分征得同意' ,itemStyle:{color:'#FEB64D'}},
+            { value: 40.84, name: '全部没有征得同意',itemStyle:{color:'#FFDC4C'} },
+            { value: 19.79, name: '不清楚',itemStyle:{color:'#FFE88E'} }
         ]
     }
 ]
@@ -300,8 +300,11 @@ echarts.init(sun_dom.querySelector(".chart-context")).setOption({
             rotate: 'tangential',
             fontSize: 11,
             fontWeight: 'bold'
-        },
         
+        },
+        itemStyle: {
+            color: "#1f6f6f"
+        }
     }
 })
 
@@ -375,8 +378,10 @@ echarts.init(san_dom.querySelector(".chart-context")).setOption(option_3_1)
 
 //3-2
 let option_3_2 = {
-    grid:{
-        left:200
+    width:'200px',
+    grid: {
+        top:80,
+        right:200
     },
     xAxis: {
       type: 'value',
@@ -384,7 +389,7 @@ let option_3_2 = {
         formatter:"{value}%"
       }
     },
-    yAxis: {name: "         2022年网民认为最可能泄露个人信息的途径",nameLocation: "start",
+    yAxis: {name: "                                                                                                    图6：2022年网民认为最可能泄露个人信息的途径",nameLocation: "start",
     nameTextStyle: {
         color:'#f2f2f2',
         fontWeight: "bold",
@@ -405,7 +410,10 @@ let option_3_2 = {
         '输入法截取信息',
         '使用公共移动电源',
         '其他'
-      ],
+        ],
+        axisLabel: {
+            color: "#fff"
+          },position: "right",
       inverse:true
     },
     series: [
@@ -430,7 +438,7 @@ echarts.init(chart_3_2.querySelector(".chart-context")).setOption(option_3_2)
 //3-3
 let option_3_3 = {width:'300px',
     grid: {
-        bottom:100,
+        bottom:80,
         left:200
     },
     xAxis: {
@@ -440,7 +448,7 @@ let option_3_3 = {width:'300px',
       },
       inverse:true
     },
-    yAxis: {name: "2022年网民认为APP存在的违规情况                       ",nameLocation: "start",
+    yAxis: {name: "图7：2022年网民认为APP存在的违规情况                     ",nameLocation: "start",
     nameTextStyle: {
         color:'#f2f2f2',
         align: "right",
@@ -457,7 +465,10 @@ let option_3_3 = {width:'300px',
         '存在不合理免责条款',
         '无法注销账户',
         '其他'
-      ],
+        ],
+        axisLabel: {
+            color: "#fff"
+          },
       inverse:true
     },
     series: [
@@ -496,11 +507,11 @@ let option_3_4 = {
         fontWeight: "bold",
         fontFamily: "思源宋体",
         fontSize: 20,
-        align:"center",verticalAlign: "bottom",lineHeight:75,
+        align: "center", verticalAlign: "bottom", lineHeight: 75,
       },
         type:'category',
         data:[
-            '国家加强立法保护个人信息安全',
+            {value:'国家加强立法保护个人信息安全',textStyle:{color:'#fff'}},
             '企业减少非必要的个人信是的收集和使用',
             '建立APP个人信息保护合规认证和监控制度,要求持证上线,违者停牌',
             '监管部门塔加更多的渠道通报违法收集者信息',
@@ -519,6 +530,7 @@ let option_3_4 = {
         type: 'bar',
         coordinateSystem:'polar',
         lable:{
+ 
             show:true,
             position:'middle',
             formatter:'{b}:{c}%'

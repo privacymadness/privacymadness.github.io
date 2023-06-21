@@ -44,7 +44,7 @@
     height: 600px;
 }
 .wide1{
-    width: 500px;
+    width: 600px;
 }
 .high1{
     height: 300px;
@@ -72,6 +72,8 @@
 
 #c-3-2{
     display: flex;
+    padding:0 10px;
+    width:600px;
     height: 220px;
    
 }
